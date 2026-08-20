@@ -14,3 +14,8 @@ curso varchar(50) not null,
 data_matricula date,
 foreign key(idaluno) references aluno(idaluno)
 );
+
+insert into aluno(nome_aluno,idade,serie,cidade) VALUES ('Emilli Vitoria',18,'3º ano', 'Sâo paulo');
+('Luis felipe',18,'3º ano', 'Sâo paulo'),
+('Renato',17,'3º ano', 'Sâo paulo'),
+('Francisco',50,'1º ano', 'bahia');
