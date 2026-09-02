@@ -72,3 +72,33 @@ select id,nome from clientes limit 5 offset 5;
 
 --buscar o produto mais caro seguindo o preco como parametro, colocamos todos os produtos em ordem decrescente e limitamos para aparecer somente 1
 -select * from produtos order by preco_unidade desc limit 1; 
+
+-- mostra todas as cidades mas sem repetir nome
+select distinct cidade from clientes;
+
+--where permite definir confições de registros
+
+select * from clientes where sexo = "f";
+select * from clientes where sexo = "f" and cidade = "Lisboa";
+
+--seleciona todos os colaboradores aonde o sexo é diferente a F
+select * from colaboradores where sexo <> "f";
+
+--seleciona todas as encomendas aonde a data-hora for menor ou igual "2030-01-02 10:00:00"
+select * from encomendas where data_hora <= "2030-01-02 10:00:00";
+
+--seleciona os preco_unidade que estão entre 1 e 2
+select * from produtos where preco_unidade between 1 and 2;
+
+--nao entendi
+select * from clientes where cidade IN("Lisboa", "Viseu", "Coimbra");
+
+--LIKE elementos especificos dentro de cada coluna
+select nome from clientes where nome like "João%"; 
+
+select nome from clientes where nome like "Daniel%"; 
+select nome from clientes where nome like "%Silva%"; 
+select nome,email from clientes where email like "%gmail.com"; 
+select nome from clientes where nome like "A%S"; 
+select nome from clientes where nome like "Francisc_%"; 
+select nome from clientes where nome like "__a%"; 
