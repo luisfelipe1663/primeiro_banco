@@ -121,3 +121,8 @@ SELECT c.nome, e.id, e.data_hora from clientes c left JOIN encomendas e ON e.id_
 
 SELECT c.*, e.* from colaboradores c left JOIN encomendas e on e.id_colaborador = c.id;
 
+select * from encomendas where id_cliente = 20 + 20 + 20 + 7 ;
+
+select e.data_hora, p.produto, ep.quantidade from encomendas_produtos ep left join encomendas e on e.id = ep.id_produto left join produtos p on p.id = ep.id_produto where e.id = 3;
+
+select e.data_hora, p.produto, ep.quantidade, p.preco_unidade*ep.quantidade as total from encomendas_produtos ep left join encomendas e on e.id = ep.id_produto left join produtos p on p.id = ep.id_produto where e.id = 3;
