@@ -102,3 +102,22 @@ select nome,email from clientes where email like "%gmail.com";
 select nome from clientes where nome like "A%S"; 
 select nome from clientes where nome like "Francisc_%"; 
 select nome from clientes where nome like "__a%"; 
+
+
+select * from colaboradores where ativo is not NULL;
+
+select *, preco_unidade *6 as `Preço por duzia`, preco_unidade * 24 as `duas duzias` from produtos; 
+
+select clientes.nome, encomendas.* from clientes, encomendas where clientes.id = encomendas.id_cliente limit 5;
+--simplificando o de cima trocando clientes por C e encomendas por E
+select c.nome, e.* from clientes c, encomendas e where c.id = e.id_cliente limit 5; 
+
+-- tras o total de elementos da minha tabela
+select count(*) as total from encomendas;
+
+--JOINS-------------------------------
+--Esta query vai devolver os nomes dos clientes, o id hora das encomendas em que cada cliente esteve envolvido
+SELECT c.nome, e.id, e.data_hora from clientes c left JOIN encomendas e ON e.id_cliente = c.id where c.id = 5;
+
+SELECT c.*, e.* from colaboradores c left JOIN encomendas e on e.id_colaborador = c.id;
+
